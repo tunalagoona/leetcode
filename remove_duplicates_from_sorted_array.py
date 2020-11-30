@@ -27,13 +27,6 @@ class Solution:
             if nums[j] != nums[i]:
                 i += 1
                 nums[i] = nums[j]
-            if j == l - 1:
-                k = i + 1
-                while True:
-                    if k < len(nums):
-                        del nums[k]
-                    else:
-                        break
         print(nums)
         return i + 1
 
