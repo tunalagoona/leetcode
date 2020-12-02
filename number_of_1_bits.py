@@ -4,7 +4,7 @@ Others / easy
 
 
 class Solution:
-    def hammingWeight(self, n: int) -> int:
+    def hamming_weight(self, n: int) -> int:
         bin_n = bin(n)
         count = 0
         bin_n = bin_n[2:]
@@ -19,4 +19,4 @@ class Solution:
 if __name__ == "__main__":
     num = 11
     s = Solution()
-    s.hammingWeight(num)
+    s.hamming_weight(num)
