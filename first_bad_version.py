@@ -1,5 +1,7 @@
 """
 Sorting and searching / easy
+Time complexity : O(log n)
+Space complexity : O(1)
 """
 
 # The isBadVersion API is already defined for you.
