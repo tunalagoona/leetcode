@@ -30,23 +30,23 @@ class Solution:
         for i in range(2, n):
             is_prime.append(True)
 
-        j = 2
-        while j * j < n:
-            if not is_prime[j]:
-                continue
-            for k in range(j * j, n, j):
-                is_prime[k] = False
-            j += 1
+        divider = 2
+        while divider * divider < n:
+            if is_prime[divider]:
+                for num in range(divider * divider, n, divider):
+                    is_prime[num] = False
+            divider += 1
 
         count = 0
-        for i in range(0, n):
-            if is_prime[i]:
+        for num in is_prime:
+            if num:
                 count += 1
+
         print(count)
         return count
 
 
 if __name__ == "__main__":
-    number = 4
+    number = 38
     sol = Solution()
     sol.countPrimes(number)
