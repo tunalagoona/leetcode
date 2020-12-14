@@ -1,13 +1,14 @@
 """
-Array / easy
-Time complexity: O(n). Space complexity: O(1).
+https://leetcode.com/problems/move-zeroes/
 """
 
 from typing import List
 
 
+# time complexity: O(n)
+# space complexity: O(1)
 class Solution:
-    def moveZeroes(self, nums: List[int]) -> None:
+    def move_zeroes(self, nums: List[int]) -> None:
         left = 0
         for i in range(1, len(nums)):
             if nums[left] == 0:
@@ -16,11 +17,3 @@ class Solution:
                     left += 1
             else:
                 left += 1
-            print(f'nums = {nums}')
-
-
-if __name__ == "__main__":
-    # numbers = [0, 0, 1, 0, 2, 2, 0, 8]
-    numbers = [1, 0, 1]
-    sol = Solution()
-    sol.moveZeroes(numbers)

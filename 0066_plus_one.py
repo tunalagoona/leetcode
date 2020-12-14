@@ -1,13 +1,13 @@
 """
-Array / easy
-Time complexity: O(n). Space complexity: O(1).
+https://leetcode.com/problems/plus-one/
 """
-
 from typing import List
 
 
+# time complexity: O(n)
+# space complexity: O(1)
 class Solution:
-    def plusOne(self, digits: List[int]) -> List[int]:
+    def plus_one(self, digits: List[int]) -> List[int]:
         i = len(digits) - 1
         digits[i] += 1
         while i != -1:
@@ -21,9 +21,3 @@ class Solution:
             else:
                 return digits
         return digits
-
-
-if __name__ == "__main__":
-    numbers = [9, 9, 9]
-    sol = Solution()
-    print(sol.plusOne(numbers))

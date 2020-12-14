@@ -1,9 +1,10 @@
 """
-Strings / easy
-Time Complexity: O(log(x)). Space Complexity: O(1).
+https://leetcode.com/problems/reverse-integer/
 """
 
 
+# time Complexity: O(log(x))
+# space Complexity: O(1)
 class Solution:
     def reverse(self, x: int) -> int:
         int_max = 2 ** 31 - 1
@@ -25,9 +26,3 @@ class Solution:
                     return 0
                 rev_x = rev_x * 10 + rem
         return rev_x
-
-
-if __name__ == "__main__":
-    num = - 2147483648
-    sol = Solution()
-    sol.reverse(num)

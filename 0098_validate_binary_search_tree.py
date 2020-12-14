@@ -1,6 +1,5 @@
 """
-Trees / easy
-Time complexity O(n), Space complexity O(n)
+https://leetcode.com/problems/validate-binary-search-tree/
 """
 
 
@@ -11,8 +10,10 @@ class TreeNode:
         self.right = right
 
 
+# time complexity: O(n)
+# space complexity: O(n)
 class Solution:
-    def isValidBST(self, root: TreeNode) -> bool:
+    def is_valid_bst(self, root: TreeNode) -> bool:
         return self.bst_checker(root_node=root)
 
     def bst_checker(self, root_node, max_val=float('inf'), min_val=float('-inf')):
@@ -31,18 +32,3 @@ class Solution:
         else:
             is_bst = True
         return is_bst
-
-
-if __name__ == "__main__":
-    # nd1 = TreeNode(1, None, None)
-    # nd2 = TreeNode(4, 3, 6)
-    # root_nd = TreeNode(5, nd1, nd2)
-
-    nd2 = TreeNode(4, None, None)
-    nd4 = TreeNode(3, None, None)
-    nd5 = TreeNode(7, None, None)
-    nd3 = TreeNode(6, nd4, nd5)
-    root_nd = TreeNode(5, nd2, nd3)
-
-    sol = Solution()
-    sol.isValidBST(root_nd)

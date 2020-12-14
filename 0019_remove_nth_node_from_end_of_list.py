@@ -1,5 +1,5 @@
 """
-Linked lists / easy
+https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 """
 
 
@@ -9,12 +9,15 @@ class ListNode:
         self.next = next
 
 
+# time complexity: O(n)
+# space complexity: O(1)
 class Solution:
-    def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+    def remove_nth_from_end(self, head: ListNode, n: int) -> ListNode:
         start_node = ListNode(0)
         start_node.next = head
         length = 0
         elem = head
+
         while elem is not None:
             length += 1
             elem = elem.next
@@ -29,17 +32,3 @@ class Solution:
             elem = elem.next
             count += 1
         return start_node.next
-
-
-if __name__ == "__main__":
-    num = 1
-
-    # e5 = ListNode(5, None)
-    # e4 = ListNode(4, e5)
-    # e3 = ListNode(3, e4)
-    # e2 = ListNode(2, e3)
-    # e1 = ListNode(1, e2)
-    e1 = ListNode(1, None)
-
-    sol = Solution()
-    sol.removeNthFromEnd(head=e1, n=num)

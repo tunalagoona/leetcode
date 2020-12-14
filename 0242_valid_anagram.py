@@ -1,25 +1,12 @@
 """
-Strings / easy
-Time complexity: O(n). Space complexity: O(n).
+https://leetcode.com/problems/valid-anagram/
 """
 
 
-# class Solution:
-#     def isAnagram(self, s: str, t: str) -> bool:
-#         ls = len(s)
-#         lt = len(t)
-#         if ls != lt:
-#             return False
-#         s = sorted(s)
-#         t = sorted(t)
-#         if s == t:
-#             print(True)
-#             return True
-#         print(False)
-#         return False
-
+# time complexity: O(n)
+# space complexity: O(n).
 class Solution:
-    def isAnagram(self, s: str, t: str) -> bool:
+    def is_anagram(self, s: str, t: str) -> bool:
         ls = len(s)
         lt = len(t)
         if ls != lt:
@@ -46,12 +33,3 @@ class Solution:
             else:
                 return False
         return True
-
-
-if __name__ == "__main__":
-    # a = "anagram"
-    # b = "nagaram"
-    a = 'a'
-    b = 'b'
-    sol = Solution()
-    print(sol.isAnagram(a, b))

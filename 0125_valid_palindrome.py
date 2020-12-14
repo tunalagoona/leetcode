@@ -1,11 +1,12 @@
 """
-Strings / easy
-Time complexity: O(n). Space complexity: O(1).
+https://leetcode.com/problems/valid-palindrome/
 """
 
 
+# time complexity: O(n)
+# space complexity: O(1)
 class Solution:
-    def isPalindrome(self, s: str) -> bool:
+    def is_palindrome(self, s: str) -> bool:
         ls = len(s)
         if ls == 0:
             return True
@@ -24,9 +25,3 @@ class Solution:
                 i += 1
         return True
 
-
-if __name__ == "__main__":
-    # a = "A man, a plan, a canal: Panama"
-    a = "race a car"
-    sol = Solution()
-    print(sol.isPalindrome(a))
