@@ -8,7 +8,7 @@ https://leetcode.com/problems/reverse-integer/
 class Solution:
     def reverse(self, x: int) -> int:
         int_max = 2 ** 31 - 1
-        int_min = - 2 ** 31
+        int_min = -(2 ** 31)
         rev_x = 0
 
         if x < 0:

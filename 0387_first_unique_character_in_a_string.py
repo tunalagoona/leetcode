@@ -16,13 +16,13 @@ class Solution:
             else:
                 lt_cnt[s[i]] = [1, i]
 
-        min_pos = float('inf')
+        min_pos = float("inf")
         for key in lt_cnt.keys():
             if lt_cnt[key][0] == 1:
                 if lt_cnt[key][1] < min_pos:
                     min_pos = lt_cnt[key][1]
 
-        if min_pos == float('inf'):
+        if min_pos == float("inf"):
             min_pos = -1
 
         return min_pos

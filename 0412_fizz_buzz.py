@@ -11,9 +11,9 @@ class Solution:
     def fizz_buzz(self, n: int) -> List[str]:
         result = []
         for k in range(1, n + 1):
-            ans = ''
-            divisible_by_3 = (k % 3 == 0)
-            divisible_by_5 = (k % 5 == 0)
+            ans = ""
+            divisible_by_3 = k % 3 == 0
+            divisible_by_5 = k % 5 == 0
 
             if divisible_by_3:
                 ans += "Fuzz"

@@ -16,4 +16,3 @@ class Solution:
             comb_num.append(0)
             comb_num[num] = comb_num[num - 1] + comb_num[num - 2]
         return comb_num[n]
-

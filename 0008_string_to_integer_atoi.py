@@ -14,22 +14,22 @@ class Solution:
 
         for i in range(0, len(s[0])):
             if not s[0][i].isnumeric():
-                if s[0][i] != '+' and s[0][i] != '-':
+                if s[0][i] != "+" and s[0][i] != "-":
                     if len(s[0][: i + 1]) <= 1:
                         return 0
                     else:
                         if i != 0:
                             if s[0][i - 1].isnumeric():
-                                s_int = s[0][: i]
+                                s_int = s[0][:i]
                                 break
                             else:
                                 return 0
                 else:
                     if i != 0:
-                        if s[0][i - 1] == '+' or s[0][i - 1] == '-':
+                        if s[0][i - 1] == "+" or s[0][i - 1] == "-":
                             return 0
                         if s[0][i - 1].isnumeric():
-                            s_int = s[0][: i]
+                            s_int = s[0][:i]
                             break
             else:
                 s_int = s[0][: i + 1]

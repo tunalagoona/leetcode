@@ -4,7 +4,6 @@ https://leetcode.com/problems/min-stack/
 
 
 class MinStack:
-
     def __init__(self):
         self.array = []
         self.length = 0

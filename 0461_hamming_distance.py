@@ -14,4 +14,3 @@ class Solution:
                 count += 1
             mask = mask << 1
         return count
-

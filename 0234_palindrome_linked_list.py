@@ -28,4 +28,4 @@ class Solution:
         if length % 2 == 0:
             return True if a == memo[mid:] else False
         else:
-            return True if a == memo[mid + 1:] else False
+            return True if a == memo[mid + 1 :] else False
