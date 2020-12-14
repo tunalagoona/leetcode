@@ -1,23 +1,19 @@
 """
-Sorting and searching / easy
-Time complexity : O(log n)
-Space complexity : O(1)
+https://leetcode.com/problems/first-bad-version/
 """
 
-# The isBadVersion API is already defined for you.
-# @param version, an integer
-# @return an integer
 
-
-def isBadVersion(version):
+def is_bad_version(version):
     if version % 4 == 0:
         return True
     else:
         return False
 
 
+# time complexity : O(log n)
+# space complexity : O(1)
 class Solution:
-    def firstBadVersion(self, n):
+    def first_bad_version(self, n):
         """
         :type n: int
         :rtype: int
@@ -26,13 +22,10 @@ class Solution:
 
     def first_bad(self, low, high, first):
         if low > high:
-            print('low > high')
             first = low
             return first
-        print(f'low = {low}, high = {high}, first bad = {first}')
         m = low + (high - low + 1) // 2
-        print(f'm = {m}')
-        if isBadVersion(m):
+        if is_bad_version(m):
             if low == high:
                 first = low
                 return first
@@ -41,11 +34,4 @@ class Solution:
             if low == high:
                 return first
             first = self.first_bad(m + 1, high, first)
-        print(f'first bad = {first}')
         return first
-
-
-if __name__ == '__main__':
-    num = 9
-    sol = Solution()
-    sol.firstBadVersion(num)

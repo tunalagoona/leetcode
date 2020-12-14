@@ -1,13 +1,14 @@
 """
-Array / easy
-Time complexity: O(n). Space complexity: O(n).
+https://leetcode.com/problems/contains-duplicate/
 """
 
 from typing import List
 
 
+# time complexity: O(n)
+# space complexity: O(n)
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def contains_duplicate(self, nums: List[int]) -> bool:
         memo = {}
         for i in range(0, len(nums)):
             if nums[i] in memo:
@@ -15,9 +16,3 @@ class Solution:
             else:
                 memo[nums[i]] = 0
         return False
-
-
-if __name__ == "__main__":
-    numbers = [1, 2, 3, 1]
-    sol = Solution()
-    sol.containsDuplicate(numbers)
