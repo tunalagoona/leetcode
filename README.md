@@ -1,4 +1,4 @@
 # leetcode
 LeetCode solutions
 
-https://img.shields.io/travis/tunalagoona/leetcode?color=brightgreen
+https://travis-ci.com/travis-ci/travis-web.svg?branch=master
