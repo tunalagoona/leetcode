@@ -1,16 +1,17 @@
 from random import randint
+from typing import Optional, List
 
 
-def partition_rand(ar, left, right):
-    pivot = randint(left, right)
-    ar[left], ar[pivot] = ar[pivot], ar[left]
-    return partition(ar, left, right)
+def partition_rand(ar: List, l: int, r: int) -> int:
+    pivot = randint(l, r)
+    ar[l], ar[pivot] = ar[pivot], ar[l]
+    return partition(ar, l, r)
 
 
-def partition(arr, start, stop):
-    pivot = start
-    i = start + 1
-    for j in range(start + 1, stop + 1):
+def partition(arr: List, l: int, r: int) -> int:
+    pivot = l
+    i = l + 1
+    for j in range(l + 1, r + 1):
         if arr[j] <= arr[pivot]:
             arr[i], arr[j] = arr[j], arr[i]
             i = i + 1
@@ -19,10 +20,15 @@ def partition(arr, start, stop):
     return pivot
 
 
-def quicksort(arr, low, high):
+def quicksort(arr, left: Optional[int] = None, right: Optional[int] = None) -> None:
+    if left is None:
+        left = 0
+    if right is None:
+        right = len(arr) - 1
+
     if len(arr) == 1:
-        return arr
-    if low < high:
-        pi = partition_rand(arr, low, high)
-        quicksort(arr, low, pi - 1)
-        quicksort(arr, pi + 1, high)
+        return
+    if left < right:
+        pi = partition_rand(arr, left, right)
+        quicksort(arr, left, pi - 1)
+        quicksort(arr, pi + 1, right)
