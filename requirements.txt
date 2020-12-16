@@ -1,2 +1,2 @@
-pytest
-mypy
+mypy==0.790
+pytest==6.2.1
