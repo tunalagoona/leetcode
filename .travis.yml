@@ -6,5 +6,5 @@ cache:
 install:
   - pip install -r requirements.txt
 script:
-  - mypy classic_algorithms/test_samples.py
+  - mypy classic_algorithms/tests/test_sorting.py
   - pytest
