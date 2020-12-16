@@ -17,7 +17,7 @@ class TestClass:
         x = []
         length = 1000
         for i in range(0, length):
-            x.append(randint(-(2 ** 30), 2 ** 30))
+            x.append(randint(-1000, 1000))
         x.sort()
         for sort in [qsort_3way, qsort_std]:
             start = time.time()
