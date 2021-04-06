@@ -25,19 +25,3 @@ class Solution:
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
         return head.next
-
-
-e3 = ListNode(3)
-e2 = ListNode(4, e3)
-e1 = ListNode(2, e2)
-
-d3 = ListNode(9)
-d2 = ListNode(6, d3)
-d1 = ListNode(5, d2)
-
-s = Solution()
-root = s.addTwoNumbers(e1, d1)
-print(root.val)
-print(root.next.val)
-print(root.next.next.val)
-print(root.next.next.next.val)
