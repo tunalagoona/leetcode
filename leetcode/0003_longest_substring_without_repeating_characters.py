@@ -26,10 +26,3 @@ class Solution:
         counters.append(counter)
         max_counter = max(counters)
         return max_counter
-
-
-# string = "abcabcbb"
-# string = "pwwkew"
-string = "dvdf"
-s = Solution()
-print(s.lengthOfLongestSubstring(string))
