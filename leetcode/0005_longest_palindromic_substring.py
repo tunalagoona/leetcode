@@ -6,53 +6,23 @@ https://leetcode.com/problems/longest-palindromic-substring/
 #  O(n**2) time complexity
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        if len(s) == 1:
-            return s
+        def grow(idx: int, ext: int) -> str:
+            l_ptr = idx
+            r_ptr = idx + ext
 
-        r, z, substring = len(s), 0, ""
+            while l_ptr >= 0 and r_ptr < len(s) and s[l_ptr] == s[r_ptr]:
+                l_ptr -= 1
+                r_ptr += 1
 
-        for i in range(r):
-            if i == 0:
-                if s[i] == s[i + 1]:
-                    z = 2
-                    substring = s[i : i + 2]
-                else:
-                    z = 1
-                    substring = s[i]
-                continue
+            return s[l_ptr + 1 : r_ptr]
 
-            if i == r - 1:
-                if z == 1:
-                    substring = s[i]
-                break
+        def max_str(a: str, b: str) -> str:
+            return a if len(a) > len(b) else b
 
-            if s[i] == s[i + 1]:
-                length = 2
-                if length >= z:
-                    substring = s[i : i + 2]
-                    z = length
+        max_palindrome = ""
 
-                j = 1
-                while i - j >= 0 and i + j + 1 <= r - 1:
-                    if s[i - j] == s[i + j + 1]:
-                        length += 2
-                        if length >= z:
-                            substring = s[i - j : i + j + 2]
-                            z = length
-                    else:
-                        break
-                    j += 1
+        for i in range(len(s)):
+            max_palindrome = max_str(grow(i, ext=0), max_palindrome)
+            max_palindrome = max_str(grow(i, ext=1), max_palindrome)
 
-            length = 1
-            j = 1
-            while i - j >= 0 and i + j <= r - 1:
-                if s[i - j] == s[i + j]:
-                    length += 2
-                    if length >= z:
-                        substring = s[i - j : i + j + 1]
-                        z = length
-                else:
-                    break
-                j += 1
-
-        return substring
+        return max_palindrome
